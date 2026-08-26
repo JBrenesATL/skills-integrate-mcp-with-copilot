@@ -18,8 +18,10 @@ document.addEventListener("DOMContentLoaded", () => {
         const activityCard = document.createElement("div");
         activityCard.className = "activity-card";
 
-        const spotsLeft =
-          details.max_participants - details.participants.length;
+        const spotsLeft = Math.max(
+          0,
+          details.max_participants - details.participants.length
+        );
 
         // Create participants HTML with delete icons instead of bullet points
         const participantsHTML =
